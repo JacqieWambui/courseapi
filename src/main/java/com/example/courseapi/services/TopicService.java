@@ -19,4 +19,13 @@ public class TopicService {
     public  List<Topic> getAllTopics() {
         return topics;
     }
+
+    //get a topic
+    public  Topic getTopic(String id){
+        /*
+        get instance of the arrays topics, stream it inorder to filter it,
+        get the id of the topics compare it with the id of topic passed, find the first onw then get
+         */
+        return topics.stream().filter( t-> t.getId().equals(id)).findFirst().get();
+    }
 }
