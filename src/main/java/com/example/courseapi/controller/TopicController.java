@@ -1,5 +1,7 @@
 package com.example.courseapi.controller;
 
+import com.example.courseapi.services.TopicService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,16 +10,13 @@ import java.util.List;
 
 @RestController
 public class TopicController {
+
+    @Autowired  //declares this as a dependency
+    private TopicService topicService;
     @RequestMapping("/topics")
 //    getAllTopics to retun list of topics objects done
     public List<Topic> getAllTopics() {
-        return Arrays.asList(
-                new Topic("Spring", "Spring Framework", "SpringFramework Description"),
-                new Topic("Java", "Core Java", "Core Java Description"),
-                new Topic("javascript", "JavaScript", "JavaScript Description")
-
-
-        );
+        return topicService.getAllTopics();
     }
 }
 
