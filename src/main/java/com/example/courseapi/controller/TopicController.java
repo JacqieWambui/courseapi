@@ -9,14 +9,20 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
+@RequestMapping("/topics")
 public class TopicController {
 
     @Autowired  //declares this as a dependency
     private TopicService topicService;
-    @RequestMapping("/topics")
+
 //    getAllTopics to retun list of topics objects done
     public List<Topic> getAllTopics() {
         return topicService.getAllTopics();
+    }
+
+    //returns one topic
+    public Topic getTopic(String id){
+
     }
 }
 
