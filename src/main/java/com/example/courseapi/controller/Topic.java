@@ -1,9 +1,13 @@
 package com.example.courseapi.controller;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Getter;
 
+@Entity
 public class Topic {
     @Getter
+    @Id
     private String id;
     private String  name;
     private String description;
