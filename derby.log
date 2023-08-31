@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Thu Aug 31 08:52:47 EAT 2023:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-018a-4a26-ba02-0000024ace50 
-on database directory memory:/home/chiri/Desktop/courseapi/98a90908-4ae1-40cf-ad79-09c5da57cc6f with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4e0e2f2a 
+Thu Aug 31 10:15:22 EAT 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-018a-4a72-55ef-00000232e748 
+on database directory memory:/home/chiri/Desktop/courseapi/6b996d06-fe97-483d-838f-dd745b4453ae with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4e0e2f2a 
 Loaded from file:/home/chiri/.m2/repository/org/apache/derby/derby/10.16.1.1/derby-10.16.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=20.0.1+9-29

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TopicService {
@@ -32,11 +33,17 @@ public class TopicService {
 
     //get a topic
     public  Topic getTopic(String id){
-        /*
-        get instance of the arrays topics, stream it inorder to filter it,
-        get the id of the topics compare it with the id of topic passed, find the first onw then get
-         */
-        return topics.stream().filter( t-> t.getId().equals(id)).findFirst().get();
+
+          Optional<Topic> optionalTopic = topicRepository.findById(id);
+          //Check if optional topic contains a value, and return it if present
+        if (optionalTopic.isPresent()){
+            return optionalTopic.get();
+        } else {
+            //Handle the case where the topic with the given ID was not found
+            //here we could throw an exceptional or return null
+            return null;
+        }
+
     }
 
     public void addTopic(Topic topic) {
