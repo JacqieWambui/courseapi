@@ -40,7 +40,7 @@ public class TopicService {
     }
 
     public void addTopic(Topic topic) {
-        topics.add(topic);
+        topicRepository.save(topic);
     }
 
     /*
