@@ -1,6 +1,8 @@
 package com.example.courseapi.services;
 
 import com.example.courseapi.controller.Topic;
+import com.example.courseapi.repository.TopicRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,6 +11,10 @@ import java.util.List;
 
 @Service
 public class TopicService {
+
+    //Get TopicRepository instance into topic service
+    @Autowired
+    private TopicRepository topicRepository;
     private  List<Topic> topics = new ArrayList<>( Arrays.asList(
                 new Topic("Spring", "Spring Framework", "SpringFramework Description"),
                 new Topic("Java", "Core Java", "Core Java Description"),
@@ -18,6 +24,9 @@ public class TopicService {
     //create a method that returns a list of topics
 
     public  List<Topic> getAllTopics() {
+        //creating a list
+        List<Topic> topics = new ArrayList<>();
+        topicRepository.findAll().forEach(topics::add);
         return topics;
     }
 
