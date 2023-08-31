@@ -16,11 +16,6 @@ public class TopicService {
     //Get TopicRepository instance into topic service
     @Autowired
     private TopicRepository topicRepository;
-    private  List<Topic> topics = new ArrayList<>( Arrays.asList(
-                new Topic("Spring", "Spring Framework", "SpringFramework Description"),
-                new Topic("Java", "Core Java", "Core Java Description"),
-                new Topic("javascript", "JavaScript", "JavaScript Description")
-        ));
 
     //create a method that returns a list of topics
 
@@ -59,7 +54,7 @@ public class TopicService {
         topicRepository.save(topic);
     }
 
-    public void  deleteTopic(String id) {
-         topics.removeIf(t-> t.getId().equals(id));
+    public void  deleteTopic(Topic id) {
+         topicRepository.delete(id);
     }
 }
