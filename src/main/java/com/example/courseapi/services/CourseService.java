@@ -1,7 +1,7 @@
 package com.example.courseapi.services;
 
-import com.example.courseapi.model.Topic;
-import com.example.courseapi.repository.TopicRepository;
+import com.example.courseapi.model.Course;
+import com.example.courseapi.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,25 +10,25 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class TopicService {
+public class CourseService {
 
     //Get TopicRepository instance into topic service
     @Autowired
-    private TopicRepository topicRepository;
+    private CourseRepository courseRepository;
 
     //create a method that returns a list of topics
 
-    public  List<Topic> getAllTopic() {
+    public  List<Course> getAllCourse() {
         //creating a list
-        List<Topic> topic = new ArrayList<>();
-        topicRepository.findAll().forEach(topic::add);
-        return topic;
+        List<Course> courses = new ArrayList<>();
+        courseRepository.findAll().forEach(courses::add);
+        return courses;
     }
 
     //get a topic
-    public Topic getTopic(String id){
+    public Course getCourse(String id){
 
-          Optional<Topic> optionalTopic = topicRepository.findById(id);
+          Optional<Course> optionalTopic = courseRepository.findById(id);
           //Check if optional topic contains a value, and return it if present
         if (optionalTopic.isPresent()){
             return optionalTopic.get();
@@ -40,8 +40,8 @@ public class TopicService {
 
     }
 
-    public void addTopic(Topic topic) {
-        topicRepository.save(topic);
+    public void addCourse(Course course) {
+        courseRepository.save(course);
     }
 
     /*
@@ -49,11 +49,11 @@ public class TopicService {
     for each topic in the list compare with the id, if its matches
     update it
      */
-    public void updateTopic(String id, Topic topic) {
-        topicRepository.save(topic);
+    public void updateCourse(Course course) {
+        courseRepository.save(course);
     }
 
-    public void deleteTopic(Topic id) {
-         topicRepository.delete(id);
+    public void deleteCourse(Course id) {
+         courseRepository.delete(id);
     }
 }
