@@ -14,13 +14,7 @@ public class Course {
     private String  name;
     private String description;
 
-    public Topic getTopic() {
-        return topic;
-    }
 
-    public void setTopic(Topic topic) {
-        this.topic = topic;
-    }
 
     @ManyToOne
     @JoinColumn(name = "topic_id")
@@ -32,10 +26,11 @@ public class Course {
     }
 
     //This is a constructor that initializes the objects
-    public Course(String id, String name, String description) {
+    public Course(String id, String name, String description, String topicId) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.topic = new Topic(topicId, "","");
     }
 
     public void setId(String id) {
@@ -56,6 +51,14 @@ public class Course {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
     }
 
 
