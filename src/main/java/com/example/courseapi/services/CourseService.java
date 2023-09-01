@@ -49,7 +49,7 @@ public class CourseService {
     for each topic in the list compare with the id, if its matches
     update it
      */
-    public void updateCourse(String id, Course course) {
+    public void updateCourse(Course course) {
         courseRepository.save(course);
     }
 
