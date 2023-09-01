@@ -1,9 +1,10 @@
 package com.example.courseapi.repository;
 
 import com.example.courseapi.controller.Course;
+import com.example.courseapi.controller.Topic;
 import org.springframework.data.repository.CrudRepository;
 
-public interface TopicRepository extends CrudRepository<Course, String> {
+public interface TopicRepository extends CrudRepository<Topic, String> {
     /*
     getAllTopics()
     getTopic(String id)

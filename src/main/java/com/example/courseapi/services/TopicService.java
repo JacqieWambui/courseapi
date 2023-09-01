@@ -1,6 +1,7 @@
 package com.example.courseapi.services;
 
 import com.example.courseapi.controller.Course;
+import com.example.courseapi.controller.Topic;
 import com.example.courseapi.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,17 +19,17 @@ public class TopicService {
 
     //create a method that returns a list of topics
 
-    public  List<Course> getAllCourse() {
+    public  List<Topic> getAllTopic() {
         //creating a list
-        List<Course> courses = new ArrayList<>();
-        topicRepository.findAll().forEach(courses::add);
-        return courses;
+        List<Topic> topic = new ArrayList<>();
+        topicRepository.findAll().forEach(topic::add);
+        return topic;
     }
 
     //get a topic
-    public Course getCourse(String id){
+    public Topic getTopic(String id){
 
-          Optional<Course> optionalTopic = topicRepository.findById(id);
+          Optional<Topic> optionalTopic = topicRepository.findById(id);
           //Check if optional topic contains a value, and return it if present
         if (optionalTopic.isPresent()){
             return optionalTopic.get();
@@ -40,8 +41,8 @@ public class TopicService {
 
     }
 
-    public void addCourse(Course course) {
-        topicRepository.save(course);
+    public void addTopic(Topic topic) {
+        topicRepository.save(topic);
     }
 
     /*
@@ -49,11 +50,11 @@ public class TopicService {
     for each topic in the list compare with the id, if its matches
     update it
      */
-    public void updateCourse(String id, Course course) {
-        topicRepository.save(course);
+    public void updateTopic(String id, Topic topic) {
+        topicRepository.save(topic);
     }
 
-    public void deleteCourse(Course id) {
+    public void deleteTopic(Topic id) {
          topicRepository.delete(id);
     }
 }

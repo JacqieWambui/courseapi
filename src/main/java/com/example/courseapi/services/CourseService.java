@@ -1,7 +1,7 @@
 package com.example.courseapi.services;
 
 import com.example.courseapi.controller.Course;
-import com.example.courseapi.repository.TopicRepository;
+import com.example.courseapi.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,21 +14,21 @@ public class CourseService {
 
     //Get TopicRepository instance into topic service
     @Autowired
-    private TopicRepository topicRepository;
+    private CourseRepository courseRepository;
 
     //create a method that returns a list of topics
 
-    public  List<Course> getAllTopics() {
+    public  List<Course> getAllCourse() {
         //creating a list
         List<Course> courses = new ArrayList<>();
-        topicRepository.findAll().forEach(courses::add);
+        courseRepository.findAll().forEach(courses::add);
         return courses;
     }
 
     //get a topic
-    public Course getTopic(String id){
+    public Course getCourse(String id){
 
-          Optional<Course> optionalTopic = topicRepository.findById(id);
+          Optional<Course> optionalTopic = courseRepository.findById(id);
           //Check if optional topic contains a value, and return it if present
         if (optionalTopic.isPresent()){
             return optionalTopic.get();
@@ -41,7 +41,7 @@ public class CourseService {
     }
 
     public void addTopic(Course course) {
-        topicRepository.save(course);
+        courseRepository.save(course);
     }
 
     /*
@@ -50,10 +50,10 @@ public class CourseService {
     update it
      */
     public void updateTopic(String id, Course course) {
-        topicRepository.save(course);
+        courseRepository.save(course);
     }
 
     public void  deleteTopic(Course id) {
-         topicRepository.delete(id);
+         courseRepository.delete(id);
     }
 }

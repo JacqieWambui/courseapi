@@ -14,29 +14,29 @@ public class TopicController {
     @RequestMapping("/topics")
 //    getAllTopics to retun list of topics objects done
     public List<Course> getAllTopics() {
-        return topicService.getAllCourse();
+        return topicService.getAllTopic();
     }
 
     //returns one topic
     @RequestMapping("/topics/{id}")
     public Course getTopic(@PathVariable  String id){
-        return  topicService.getCourse(id);
+        return  topicService.getTopic(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/topics")
     public  void addTopic( @RequestBody Course course) {
-        topicService.addCourse(course);
+        topicService.addTopic(course);
 
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/topics/{id}")
     public void updateTopic(@RequestBody Course course, @PathVariable String id){
-        topicService.updateCourse(id, course);
+        topicService.updateTopic(id, course);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/topics/{id}")
     public void deleteTopic(@PathVariable Course id) {
-        topicService.deleteCourse(id);
+        topicService.deleteTopic(id);
     }
 
 
