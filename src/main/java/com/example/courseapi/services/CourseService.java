@@ -40,7 +40,7 @@ public class CourseService {
 
     }
 
-    public void addTopic(Course course) {
+    public void addCourse(Course course) {
         courseRepository.save(course);
     }
 
@@ -49,11 +49,11 @@ public class CourseService {
     for each topic in the list compare with the id, if its matches
     update it
      */
-    public void updateTopic(String id, Course course) {
+    public void updateCourse(String id, Course course) {
         courseRepository.save(course);
     }
 
-    public void  deleteTopic(Course id) {
+    public void deleteCourse(Course id) {
          courseRepository.delete(id);
     }
 }
