@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class TopicService {
+public class CourseService {
 
     //Get TopicRepository instance into topic service
     @Autowired
@@ -18,7 +18,7 @@ public class TopicService {
 
     //create a method that returns a list of topics
 
-    public  List<Course> getAllCourse() {
+    public  List<Course> getAllTopics() {
         //creating a list
         List<Course> courses = new ArrayList<>();
         topicRepository.findAll().forEach(courses::add);
@@ -26,7 +26,7 @@ public class TopicService {
     }
 
     //get a topic
-    public Course getCourse(String id){
+    public Course getTopic(String id){
 
           Optional<Course> optionalTopic = topicRepository.findById(id);
           //Check if optional topic contains a value, and return it if present
@@ -40,7 +40,7 @@ public class TopicService {
 
     }
 
-    public void addCourse(Course course) {
+    public void addTopic(Course course) {
         topicRepository.save(course);
     }
 
@@ -49,11 +49,11 @@ public class TopicService {
     for each topic in the list compare with the id, if its matches
     update it
      */
-    public void updateCourse(String id, Course course) {
+    public void updateTopic(String id, Course course) {
         topicRepository.save(course);
     }
 
-    public void deleteCourse(Course id) {
+    public void  deleteTopic(Course id) {
          topicRepository.delete(id);
     }
 }
