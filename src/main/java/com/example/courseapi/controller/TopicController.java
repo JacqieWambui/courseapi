@@ -1,5 +1,6 @@
 package com.example.courseapi.controller;
 
+import com.example.courseapi.model.Topic;
 import com.example.courseapi.services.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
