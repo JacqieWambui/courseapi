@@ -11,30 +11,31 @@ public class CourseController {
 
     @Autowired  //declares this as a dependency
     private CourseService courseService;
-    @RequestMapping("/topics")
+    @RequestMapping("/topics/{topicId}/courses")
 //    getAllCourse to retun list of course objects done
     public List<Course> getAllCourse() {
         return courseService.getAllCourse();
     }
 
     //returns one course
-    @RequestMapping("/topics/{id}")
+    @RequestMapping("/topics/{topicId}/courses/{Id}")
     public Course getCourse(@PathVariable  String id){
         return  courseService.getCourse(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/topics")
-    public  void addCourse(@RequestBody Course course) {
+    @RequestMapping(method = RequestMethod.POST, value = "/topics/{topicId}/courses")
+    public  void addCourse(@RequestBody Course course, @PathVariable String topicId) {
+        course.setTopic(new Topic(topicId,"",""));
         courseService.addCourse(course);
 
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/topics/{id}")
+    @RequestMapping(method = RequestMethod.PUT, value = "/course/{topicId}/courses/{Id}")
     public void updateCourse(@RequestBody Course course, @PathVariable String id){
         courseService.updateCourse(id, course);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/topics/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/course/{topicId}/courses/{Id}")
     public void deleteCourse(@PathVariable Course id) {
         courseService.deleteCourse(id);
     }
