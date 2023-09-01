@@ -2,6 +2,8 @@ package com.example.courseapi.controller;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 
 @Entity
@@ -11,6 +13,18 @@ public class Course {
     private String id;
     private String  name;
     private String description;
+
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "topic_id")
+    private Topic topic;
 
     //This is a no arg constructor
     public Course() {
