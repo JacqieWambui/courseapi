@@ -16,11 +16,8 @@ The Java Spring Boot-based Course API is a robust and efficient application desi
 ## Getting Started
 To set up and run the Java Spring Boot Course API:
 
-## Clone the Repository:
-
-bash
-Copy code
-git clone https://github.com/your-username/spring-boot-course-api.git
+- Clone the Repository:
+```git clone https://github.com/gmatieso/spring-boot-course-api.git ```
 - Configure the Database:
 Set up a compatible database (e.g., MySQL, PostgreSQL).
 Update the application.properties file with the database connection details.
