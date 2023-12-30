@@ -17,31 +17,33 @@ The Java Spring Boot-based Course API is a robust and efficient application desi
 To set up and run the Java Spring Boot Course API:
 
 - Clone the Repository:
-```git clone https://github.com/gmatieso/spring-boot-course-api.git ```
+```
+git clone https://github.com/gmatieso/spring-boot-course-api.git
+ ```
 - Configure the Database:
 Set up a compatible database (e.g., MySQL, PostgreSQL).
 Update the application.properties file with the database connection details.
 - Run the Application:
 bash
-Copy code
+```
 ./mvnw spring-boot:run
+```
 The API will be accessible at http://localhost:8080.
 
 ## API Endpoints
-- Create Course:
-Endpoint: POST /api/courses
+#### Create Course:
+- Endpoint: POST /api/courses
 Request Body: JSON object with course details.
-- Read Courses:
-Endpoint: GET /api/courses
+#### Read Courses:
+- Endpoint: GET /api/courses
 Response: JSON array containing all courses.
-- Update Course:
-Endpoint: PUT /api/courses/{id}
+#### Update Course:
+- Endpoint: PUT /api/courses/{id}
 Request Body: JSON object with updated course details.
-- Delete Course:
-Endpoint: DELETE /api/courses/{id}
- Retrieve Course Details:
-
-Endpoint: GET /api/courses/{id}
+#### Delete Course:
+- Endpoint: DELETE /api/courses/{id}
+### Retrieve Course Details:
+ - Endpoint: GET /api/courses/{id}
 ## Authentication
 The API utilizes Spring Security for secure authentication. Ensure proper authentication tokens are included in the request headers.
 
